@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: hardware_interface
+Description: Description of hardware_interface
+Version: 0.9.3
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: roscpp

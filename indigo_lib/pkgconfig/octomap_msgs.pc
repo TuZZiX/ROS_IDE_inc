@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: octomap_msgs
+Description: Description of octomap_msgs
+Version: 0.3.2
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_runtime geometry_msgs std_msgs

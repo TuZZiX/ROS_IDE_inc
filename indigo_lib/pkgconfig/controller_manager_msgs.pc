@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: controller_manager_msgs
+Description: Description of controller_manager_msgs
+Version: 0.9.3
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: std_msgs message_runtime
