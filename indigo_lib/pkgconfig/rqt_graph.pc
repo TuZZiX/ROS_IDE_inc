@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: rqt_graph
-Description: Description of rqt_graph
-Version: 0.3.12
-Cflags: 
-Libs: -L/opt/ros/indigo/lib 
-Requires: 

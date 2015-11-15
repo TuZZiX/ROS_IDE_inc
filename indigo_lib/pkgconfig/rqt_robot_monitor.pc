@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: rqt_robot_monitor
-Description: Description of rqt_robot_monitor
-Version: 0.4.2
-Cflags: 
-Libs: -L/opt/ros/indigo/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: effort_controllers
-Description: Description of effort_controllers
-Version: 0.9.2
-Cflags: -I/opt/ros/indigo/include
-Libs: -L/opt/ros/indigo/lib -leffort_controllers
-Requires: controller_interface control_msgs control_toolbox realtime_tools urdf forward_command_controller

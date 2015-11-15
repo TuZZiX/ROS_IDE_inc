@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: controller_manager
-Description: Description of controller_manager
-Version: 0.9.3
-Cflags: -I/opt/ros/indigo/include
-Libs: -L/opt/ros/indigo/lib -lcontroller_manager
-Requires: controller_interface controller_manager_msgs hardware_interface realtime_tools pluginlib

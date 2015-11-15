@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: visualization_marker_tutorials
-Description: Description of visualization_marker_tutorials
-Version: 0.9.1
-Cflags: 
-Libs: -L/opt/ros/indigo/lib 
-Requires: roscpp visualization_msgs

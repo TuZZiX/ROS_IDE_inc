@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: transmission_interface
-Description: Description of transmission_interface
-Version: 0.9.3
-Cflags: -I/opt/ros/indigo/include -I/usr/include
-Libs: -L/opt/ros/indigo/lib -ltransmission_interface_parser -ltransmission_interface_loader -ltransmission_interface_loader_plugins -l:/usr/lib/x86_64-linux-gnu/libtinyxml.so
-Requires: pluginlib resource_retriever roscpp

@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: forward_command_controller
-Description: Description of forward_command_controller
-Version: 0.9.2
-Cflags: -I/opt/ros/indigo/include
-Libs: -L/opt/ros/indigo/lib 
-Requires: controller_interface hardware_interface std_msgs realtime_tools

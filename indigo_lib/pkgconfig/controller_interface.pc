@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: controller_interface
-Description: Description of controller_interface
-Version: 0.9.3
-Cflags: -I/opt/ros/indigo/include
-Libs: -L/opt/ros/indigo/lib 
-Requires: roscpp hardware_interface pluginlib

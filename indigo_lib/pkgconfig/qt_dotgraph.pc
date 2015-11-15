@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: qt_dotgraph
-Description: Description of qt_dotgraph
-Version: 0.2.28
-Cflags: 
-Libs: -L/opt/ros/indigo/lib 
-Requires: 

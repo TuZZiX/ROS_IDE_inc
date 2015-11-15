@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: std_srvs
-Description: Description of std_srvs
-Version: 1.11.1
-Cflags: -I/opt/ros/indigo/include
-Libs: -L/opt/ros/indigo/lib 
-Requires: message_runtime
