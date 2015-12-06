@@ -436,9 +436,9 @@ DisparityConfig::GroupDescription<DisparityConfig::DEFAULT, DisparityConfig> Def
 //#line 262 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.stereo_algorithm = 0;
 //#line 262 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      Default.abstract_parameters.push_back(DisparityConfig::AbstractParamDescriptionConstPtr(new DisparityConfig::ParamDescription<int>("stereo_algorithm", "int", 0, "sterel algorithm", "{'enum_description': 'stereo algorithm', 'enum': [{'srcline': 11, 'description': 'Block Matching', 'srcfile': '/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20150806-2002/cfg/Disparity.cfg', 'cconsttype': 'const int', 'value': 0, 'ctype': 'int', 'type': 'int', 'name': 'StereoBM'}, {'srcline': 12, 'description': 'SemiGlobal Block Matching', 'srcfile': '/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20150806-2002/cfg/Disparity.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'StereoSGBM'}]}", &DisparityConfig::stereo_algorithm)));
+      Default.abstract_parameters.push_back(DisparityConfig::AbstractParamDescriptionConstPtr(new DisparityConfig::ParamDescription<int>("stereo_algorithm", "int", 0, "sterel algorithm", "{'enum_description': 'stereo algorithm', 'enum': [{'srcline': 11, 'description': 'Block Matching', 'srcfile': '/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20151111-0911/cfg/Disparity.cfg', 'cconsttype': 'const int', 'value': 0, 'ctype': 'int', 'type': 'int', 'name': 'StereoBM'}, {'srcline': 12, 'description': 'SemiGlobal Block Matching', 'srcfile': '/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20151111-0911/cfg/Disparity.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'StereoSGBM'}]}", &DisparityConfig::stereo_algorithm)));
 //#line 262 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __param_descriptions__.push_back(DisparityConfig::AbstractParamDescriptionConstPtr(new DisparityConfig::ParamDescription<int>("stereo_algorithm", "int", 0, "sterel algorithm", "{'enum_description': 'stereo algorithm', 'enum': [{'srcline': 11, 'description': 'Block Matching', 'srcfile': '/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20150806-2002/cfg/Disparity.cfg', 'cconsttype': 'const int', 'value': 0, 'ctype': 'int', 'type': 'int', 'name': 'StereoBM'}, {'srcline': 12, 'description': 'SemiGlobal Block Matching', 'srcfile': '/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20150806-2002/cfg/Disparity.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'StereoSGBM'}]}", &DisparityConfig::stereo_algorithm)));
+      __param_descriptions__.push_back(DisparityConfig::AbstractParamDescriptionConstPtr(new DisparityConfig::ParamDescription<int>("stereo_algorithm", "int", 0, "sterel algorithm", "{'enum_description': 'stereo algorithm', 'enum': [{'srcline': 11, 'description': 'Block Matching', 'srcfile': '/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20151111-0911/cfg/Disparity.cfg', 'cconsttype': 'const int', 'value': 0, 'ctype': 'int', 'type': 'int', 'name': 'StereoBM'}, {'srcline': 12, 'description': 'SemiGlobal Block Matching', 'srcfile': '/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20151111-0911/cfg/Disparity.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'StereoSGBM'}]}", &DisparityConfig::stereo_algorithm)));
 //#line 262 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.prefilter_size = 5;
 //#line 262 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
@@ -648,9 +648,9 @@ DisparityConfig::GroupDescription<DisparityConfig::DEFAULT, DisparityConfig> Def
     return statics;
   }
 
-//#line 11 "/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20150806-2002/cfg/Disparity.cfg"
+//#line 11 "/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20151111-0911/cfg/Disparity.cfg"
       const int Disparity_StereoBM = 0;
-//#line 12 "/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20150806-2002/cfg/Disparity.cfg"
+//#line 12 "/tmp/buildd/ros-indigo-stereo-image-proc-1.12.14-0trusty-20151111-0911/cfg/Disparity.cfg"
       const int Disparity_StereoSGBM = 1;
 }
 
