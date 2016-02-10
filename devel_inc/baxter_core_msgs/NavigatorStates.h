@@ -118,12 +118,12 @@ struct MD5Sum< ::baxter_core_msgs::NavigatorStates_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "5745df78c997599ee33f1055631024a9";
+    return "2c2eeb02fbbaa6f1ab6c680887f2db78";
   }
 
   static const char* value(const ::baxter_core_msgs::NavigatorStates_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x5745df78c997599eULL;
-  static const uint64_t static_value2 = 0xe33f1055631024a9ULL;
+  static const uint64_t static_value1 = 0x2c2eeb02fbbaa6f1ULL;
+  static const uint64_t static_value2 = 0xab6c680887f2db78ULL;
 };
 
 template<class ContainerAllocator>
@@ -149,7 +149,7 @@ NavigatorState[] states\n\
 ================================================================================\n\
 MSG: baxter_core_msgs/NavigatorState\n\
 # buttons\n\
-string[] names\n\
+string[] button_names\n\
 bool[] buttons\n\
 \n\
 # wheel position\n\
@@ -157,6 +157,7 @@ uint8   wheel\n\
 \n\
 # true if the light is on, false if not\n\
 # lights map to button names\n\
+string[] light_names\n\
 bool[] lights\n\
 ";
   }

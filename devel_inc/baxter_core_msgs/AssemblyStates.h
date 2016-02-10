@@ -118,12 +118,12 @@ struct MD5Sum< ::baxter_core_msgs::AssemblyStates_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "75940630f2f408c2b7f433e9ceb232dc";
+    return "63427318d41dbd2077c105027ad82a2b";
   }
 
   static const char* value(const ::baxter_core_msgs::AssemblyStates_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x75940630f2f408c2ULL;
-  static const uint64_t static_value2 = 0xb7f433e9ceb232dcULL;
+  static const uint64_t static_value1 = 0x63427318d41dbd20ULL;
+  static const uint64_t static_value2 = 0x77c105027ad82a2bULL;
 };
 
 template<class ContainerAllocator>
@@ -146,6 +146,7 @@ struct Definition< ::baxter_core_msgs::AssemblyStates_<ContainerAllocator> >
 AssemblyState[] states\n\
 ================================================================================\n\
 MSG: baxter_core_msgs/AssemblyState\n\
+bool ready               # true if enabled and ready to operate, e.g., not homing\n\
 bool enabled             # true if enabled\n\
 bool stopped             # true if stopped -- e-stop asserted\n\
 bool error               # true if a component of the assembly has an error\n\

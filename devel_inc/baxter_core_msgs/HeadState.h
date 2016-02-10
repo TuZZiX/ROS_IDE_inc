@@ -25,13 +25,15 @@ struct HeadState_
 
   HeadState_()
     : pan(0.0)
-    , isPanning(false)
-    , isNodding(false)  {
+    , isTurning(false)
+    , isNodding(false)
+    , isPanEnabled(false)  {
     }
   HeadState_(const ContainerAllocator& _alloc)
     : pan(0.0)
-    , isPanning(false)
-    , isNodding(false)  {
+    , isTurning(false)
+    , isNodding(false)
+    , isPanEnabled(false)  {
     }
 
 
@@ -39,11 +41,14 @@ struct HeadState_
    typedef float _pan_type;
   _pan_type pan;
 
-   typedef uint8_t _isPanning_type;
-  _isPanning_type isPanning;
+   typedef uint8_t _isTurning_type;
+  _isTurning_type isTurning;
 
    typedef uint8_t _isNodding_type;
   _isNodding_type isNodding;
+
+   typedef uint8_t _isPanEnabled_type;
+  _isPanEnabled_type isPanEnabled;
 
 
 
@@ -122,12 +127,12 @@ struct MD5Sum< ::baxter_core_msgs::HeadState_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "a7a905cb9138493d35f02b3c35b9d65b";
+    return "71c43b264307205358e7e49be5601348";
   }
 
   static const char* value(const ::baxter_core_msgs::HeadState_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xa7a905cb9138493dULL;
-  static const uint64_t static_value2 = 0x35f02b3c35b9d65bULL;
+  static const uint64_t static_value1 = 0x71c43b2643072053ULL;
+  static const uint64_t static_value2 = 0x58e7e49be5601348ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,8 +152,9 @@ struct Definition< ::baxter_core_msgs::HeadState_<ContainerAllocator> >
   static const char* value()
   {
     return "float32 pan\n\
-bool isPanning\n\
+bool isTurning\n\
 bool isNodding\n\
+bool isPanEnabled\n\
 ";
   }
 
@@ -168,8 +174,9 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.pan);
-      stream.next(m.isPanning);
+      stream.next(m.isTurning);
       stream.next(m.isNodding);
+      stream.next(m.isPanEnabled);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -190,10 +197,12 @@ struct Printer< ::baxter_core_msgs::HeadState_<ContainerAllocator> >
   {
     s << indent << "pan: ";
     Printer<float>::stream(s, indent + "  ", v.pan);
-    s << indent << "isPanning: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.isPanning);
+    s << indent << "isTurning: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.isTurning);
     s << indent << "isNodding: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.isNodding);
+    s << indent << "isPanEnabled: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.isPanEnabled);
   }
 };
 

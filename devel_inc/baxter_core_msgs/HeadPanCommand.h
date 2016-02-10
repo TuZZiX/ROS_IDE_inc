@@ -25,11 +25,13 @@ struct HeadPanCommand_
 
   HeadPanCommand_()
     : target(0.0)
-    , speed(0)  {
+    , speed_ratio(0.0)
+    , enable_pan_request(0)  {
     }
   HeadPanCommand_(const ContainerAllocator& _alloc)
     : target(0.0)
-    , speed(0)  {
+    , speed_ratio(0.0)
+    , enable_pan_request(0)  {
     }
 
 
@@ -37,11 +39,19 @@ struct HeadPanCommand_
    typedef float _target_type;
   _target_type target;
 
-   typedef int32_t _speed_type;
-  _speed_type speed;
+   typedef float _speed_ratio_type;
+  _speed_ratio_type speed_ratio;
+
+   typedef uint8_t _enable_pan_request_type;
+  _enable_pan_request_type enable_pan_request;
 
 
-
+    static const float MAX_SPEED_RATIO;
+     static const float MIN_SPEED_RATIO;
+     enum { REQUEST_PAN_DISABLE = 0u };
+     enum { REQUEST_PAN_ENABLE = 1u };
+     enum { REQUEST_PAN_VOID = 2u };
+ 
 
   typedef boost::shared_ptr< ::baxter_core_msgs::HeadPanCommand_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::baxter_core_msgs::HeadPanCommand_<ContainerAllocator> const> ConstPtr;
@@ -54,6 +64,30 @@ typedef boost::shared_ptr< ::baxter_core_msgs::HeadPanCommand > HeadPanCommandPt
 typedef boost::shared_ptr< ::baxter_core_msgs::HeadPanCommand const> HeadPanCommandConstPtr;
 
 // constants requiring out of line definition
+
+   
+   template<typename ContainerAllocator> const float
+      HeadPanCommand_<ContainerAllocator>::MAX_SPEED_RATIO =
+        
+          1.0
+        
+        ;
+   
+
+   
+   template<typename ContainerAllocator> const float
+      HeadPanCommand_<ContainerAllocator>::MIN_SPEED_RATIO =
+        
+          0.0
+        
+        ;
+   
+
+   
+
+   
+
+   
 
 
 
@@ -117,12 +151,12 @@ struct MD5Sum< ::baxter_core_msgs::HeadPanCommand_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "990c3757495fec1dbde36b9b559e7bae";
+    return "23b8a3f4b7ee9de7099d029e57660a8c";
   }
 
   static const char* value(const ::baxter_core_msgs::HeadPanCommand_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x990c3757495fec1dULL;
-  static const uint64_t static_value2 = 0xbde36b9b559e7baeULL;
+  static const uint64_t static_value1 = 0x23b8a3f4b7ee9de7ULL;
+  static const uint64_t static_value2 = 0x099d029e57660a8cULL;
 };
 
 template<class ContainerAllocator>
@@ -141,10 +175,18 @@ struct Definition< ::baxter_core_msgs::HeadPanCommand_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "#Header header\n\
-float32 target # radians for target, 0 str\n\
-int32 speed # between 0 and 100, 100 = max\n\
-\n\
+    return "float32 target              # radians for target, 0 str\n\
+float32 speed_ratio         # Percentage of max speed [0-1]\n\
+#\n\
+  float32 MAX_SPEED_RATIO = 1.0\n\
+  float32 MIN_SPEED_RATIO = 0.0\n\
+#\n\
+uint8   enable_pan_request  # override automatic pan enable/disable\n\
+# enable_pan_request is tristate: 0 = disable pan; 1 = enable pan; 2 = don't change pan\n\
+  uint8   REQUEST_PAN_DISABLE = 0\n\
+  uint8   REQUEST_PAN_ENABLE = 1\n\
+  uint8   REQUEST_PAN_VOID = 2\n\
+#\n\
 ";
   }
 
@@ -164,7 +206,8 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.target);
-      stream.next(m.speed);
+      stream.next(m.speed_ratio);
+      stream.next(m.enable_pan_request);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -185,8 +228,10 @@ struct Printer< ::baxter_core_msgs::HeadPanCommand_<ContainerAllocator> >
   {
     s << indent << "target: ";
     Printer<float>::stream(s, indent + "  ", v.target);
-    s << indent << "speed: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.speed);
+    s << indent << "speed_ratio: ";
+    Printer<float>::stream(s, indent + "  ", v.speed_ratio);
+    s << indent << "enable_pan_request: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.enable_pan_request);
   }
 };
 

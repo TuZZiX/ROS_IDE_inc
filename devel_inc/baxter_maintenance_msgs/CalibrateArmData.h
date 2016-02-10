@@ -24,13 +24,16 @@ struct CalibrateArmData_
   typedef CalibrateArmData_<ContainerAllocator> Type;
 
   CalibrateArmData_()
-    {
+    : suppressWriteToFile(false)  {
     }
   CalibrateArmData_(const ContainerAllocator& _alloc)
-    {
+    : suppressWriteToFile(false)  {
     }
 
 
+
+   typedef uint8_t _suppressWriteToFile_type;
+  _suppressWriteToFile_type suppressWriteToFile;
 
 
 
@@ -109,12 +112,12 @@ struct MD5Sum< ::baxter_maintenance_msgs::CalibrateArmData_<ContainerAllocator> 
 {
   static const char* value()
   {
-    return "d41d8cd98f00b204e9800998ecf8427e";
+    return "ba9ee949ea363f7bcfc8cc74e0bcb69d";
   }
 
   static const char* value(const ::baxter_maintenance_msgs::CalibrateArmData_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xd41d8cd98f00b204ULL;
-  static const uint64_t static_value2 = 0xe9800998ecf8427eULL;
+  static const uint64_t static_value1 = 0xba9ee949ea363f7bULL;
+  static const uint64_t static_value2 = 0xcfc8cc74e0bcb69dULL;
 };
 
 template<class ContainerAllocator>
@@ -133,7 +136,7 @@ struct Definition< ::baxter_maintenance_msgs::CalibrateArmData_<ContainerAllocat
 {
   static const char* value()
   {
-    return "\n\
+    return "bool suppressWriteToFile\n\
 ";
   }
 
@@ -150,8 +153,10 @@ namespace serialization
 
   template<class ContainerAllocator> struct Serializer< ::baxter_maintenance_msgs::CalibrateArmData_<ContainerAllocator> >
   {
-    template<typename Stream, typename T> inline static void allInOne(Stream&, T)
-    {}
+    template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
+    {
+      stream.next(m.suppressWriteToFile);
+    }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
   }; // struct CalibrateArmData_
@@ -167,8 +172,11 @@ namespace message_operations
 template<class ContainerAllocator>
 struct Printer< ::baxter_maintenance_msgs::CalibrateArmData_<ContainerAllocator> >
 {
-  template<typename Stream> static void stream(Stream&, const std::string&, const ::baxter_maintenance_msgs::CalibrateArmData_<ContainerAllocator>&)
-  {}
+  template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::baxter_maintenance_msgs::CalibrateArmData_<ContainerAllocator>& v)
+  {
+    s << indent << "suppressWriteToFile: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.suppressWriteToFile);
+  }
 };
 
 } // namespace message_operations

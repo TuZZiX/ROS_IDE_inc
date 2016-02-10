@@ -24,14 +24,16 @@ struct AssemblyState_
   typedef AssemblyState_<ContainerAllocator> Type;
 
   AssemblyState_()
-    : enabled(false)
+    : ready(false)
+    , enabled(false)
     , stopped(false)
     , error(false)
     , estop_button(0)
     , estop_source(0)  {
     }
   AssemblyState_(const ContainerAllocator& _alloc)
-    : enabled(false)
+    : ready(false)
+    , enabled(false)
     , stopped(false)
     , error(false)
     , estop_button(0)
@@ -39,6 +41,9 @@ struct AssemblyState_
     }
 
 
+
+   typedef uint8_t _ready_type;
+  _ready_type ready;
 
    typedef uint8_t _enabled_type;
   _enabled_type enabled;
@@ -159,12 +164,12 @@ struct MD5Sum< ::baxter_core_msgs::AssemblyState_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "d7ff2b9fa7d5f688665ce44db4ee2af8";
+    return "356d9dd237ce73b2667da9235f541933";
   }
 
   static const char* value(const ::baxter_core_msgs::AssemblyState_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xd7ff2b9fa7d5f688ULL;
-  static const uint64_t static_value2 = 0x665ce44db4ee2af8ULL;
+  static const uint64_t static_value1 = 0x356d9dd237ce73b2ULL;
+  static const uint64_t static_value2 = 0x667da9235f541933ULL;
 };
 
 template<class ContainerAllocator>
@@ -183,7 +188,8 @@ struct Definition< ::baxter_core_msgs::AssemblyState_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "bool enabled             # true if enabled\n\
+    return "bool ready               # true if enabled and ready to operate, e.g., not homing\n\
+bool enabled             # true if enabled\n\
 bool stopped             # true if stopped -- e-stop asserted\n\
 bool error               # true if a component of the assembly has an error\n\
 #\n\
@@ -218,6 +224,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
+      stream.next(m.ready);
       stream.next(m.enabled);
       stream.next(m.stopped);
       stream.next(m.error);
@@ -241,6 +248,8 @@ struct Printer< ::baxter_core_msgs::AssemblyState_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::baxter_core_msgs::AssemblyState_<ContainerAllocator>& v)
   {
+    s << indent << "ready: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.ready);
     s << indent << "enabled: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.enabled);
     s << indent << "stopped: ";

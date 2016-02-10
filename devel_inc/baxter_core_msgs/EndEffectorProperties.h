@@ -32,6 +32,7 @@ struct EndEffectorProperties_
     , hardware_rev()
     , firmware_rev()
     , firmware_date()
+    , has_calibration(false)
     , controls_grip(false)
     , senses_grip(false)
     , reverses_grip(false)
@@ -50,6 +51,7 @@ struct EndEffectorProperties_
     , hardware_rev(_alloc)
     , firmware_rev(_alloc)
     , firmware_date(_alloc)
+    , has_calibration(false)
     , controls_grip(false)
     , senses_grip(false)
     , reverses_grip(false)
@@ -86,6 +88,9 @@ struct EndEffectorProperties_
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _firmware_date_type;
   _firmware_date_type firmware_date;
 
+   typedef uint8_t _has_calibration_type;
+  _has_calibration_type has_calibration;
+
    typedef uint8_t _controls_grip_type;
   _controls_grip_type controls_grip;
 
@@ -114,7 +119,7 @@ struct EndEffectorProperties_
     enum { NO_GRIPPER = 0u };
      enum { SUCTION_CUP_GRIPPER = 1u };
      enum { ELECTRIC_GRIPPER = 2u };
-     enum { CUSTOM_GRIPPER = 3u };
+     enum { PASSIVE_GRIPPER = 3u };
  
 
   typedef boost::shared_ptr< ::baxter_core_msgs::EndEffectorProperties_<ContainerAllocator> > Ptr;
@@ -199,12 +204,12 @@ struct MD5Sum< ::baxter_core_msgs::EndEffectorProperties_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "65f719b6b567d6b71b340982808da896";
+    return "21b83773ab9a35216d11e427573c76cc";
   }
 
   static const char* value(const ::baxter_core_msgs::EndEffectorProperties_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x65f719b6b567d6b7ULL;
-  static const uint64_t static_value2 = 0x1b340982808da896ULL;
+  static const uint64_t static_value1 = 0x21b83773ab9a3521ULL;
+  static const uint64_t static_value2 = 0x6d11e427573c76ccULL;
 };
 
 template<class ContainerAllocator>
@@ -229,7 +234,7 @@ uint8  ui_type\n\
     uint8  NO_GRIPPER = 0\n\
     uint8  SUCTION_CUP_GRIPPER = 1\n\
     uint8  ELECTRIC_GRIPPER = 2\n\
-    uint8  CUSTOM_GRIPPER = 3\n\
+    uint8  PASSIVE_GRIPPER = 3\n\
 string manufacturer     # Manufacturer name\n\
 string product          # Product name\n\
 string serial_number    # Serial number, optional\n\
@@ -238,6 +243,7 @@ string firmware_rev     # Firmware revision, optional\n\
 string firmware_date    # Firmware date, optional\n\
 #\n\
 # End Effector Capabilities\n\
+bool   has_calibration  # true if the gripper has calibration\n\
 bool   controls_grip    # true if the gripper has grip/release control\n\
 bool   senses_grip      # true if the gripper has grip sense\n\
 bool   reverses_grip    # true if the gripper has reverse-grip mode\n\
@@ -275,6 +281,7 @@ namespace serialization
       stream.next(m.hardware_rev);
       stream.next(m.firmware_rev);
       stream.next(m.firmware_date);
+      stream.next(m.has_calibration);
       stream.next(m.controls_grip);
       stream.next(m.senses_grip);
       stream.next(m.reverses_grip);
@@ -317,6 +324,8 @@ struct Printer< ::baxter_core_msgs::EndEffectorProperties_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.firmware_rev);
     s << indent << "firmware_date: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.firmware_date);
+    s << indent << "has_calibration: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.has_calibration);
     s << indent << "controls_grip: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.controls_grip);
     s << indent << "senses_grip: ";

@@ -123,12 +123,12 @@ struct MD5Sum< ::baxter_maintenance_msgs::CalibrateArmEnable_<ContainerAllocator
 {
   static const char* value()
   {
-    return "e29cddd6c5825de42ce8309f5f9cb399";
+    return "d7ff300fd410d4ac849664ab8143da39";
   }
 
   static const char* value(const ::baxter_maintenance_msgs::CalibrateArmEnable_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xe29cddd6c5825de4ULL;
-  static const uint64_t static_value2 = 0x2ce8309f5f9cb399ULL;
+  static const uint64_t static_value1 = 0xd7ff300fd410d4acULL;
+  static const uint64_t static_value2 = 0x849664ab8143da39ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,6 +153,7 @@ CalibrateArmData data\n\
 \n\
 ================================================================================\n\
 MSG: baxter_maintenance_msgs/CalibrateArmData\n\
+bool suppressWriteToFile\n\
 ";
   }
 
